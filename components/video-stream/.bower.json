@@ -1,0 +1,25 @@
+{
+  "name": "video-stream",
+  "description": "Captures video stream from webcam",
+  "main": "video-stream.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/veith/video-stream",
+  "_release": "08c0194c85",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "08c0194c859ec200be9353fb0b625ed47d5a668e"
+  },
+  "_source": "git://github.com/veith/video-stream.git",
+  "_target": "master",
+  "_originalSource": "veith/video-stream",
+  "_direct": true
+}
