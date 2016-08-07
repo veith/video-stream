@@ -1,0 +1,76 @@
+<!--
+Veith Zäch, MIT
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+`<video-stream>` delivers a video with an optional audio stream.
+
+Usage:
+```
+<video-stream stream="{{stream}}"></video-stream>
+<video  src="[[stream]]" width="100%" autoplay></video>
+```
+
+@author veith
+@date 09.07.16
+@hero path/to/image
+@demo demo/index.html
+-->
+
+<dom-module id="video-stream">
+
+  <template>
+
+    <style>
+      :host {
+        display: none;
+      }
+    </style>
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'video-stream',
+      properties: {
+        /**
+         * The video stream
+         */
+        stream: {
+          type: Object,
+          notify:true
+
+        }
+      },
+      ready:function () {
+        var errBack = function (error) {
+          console.log("Video capture error: ", error.code);
+        };
+
+        var videoObj = {video: true};
+        // Put video listeners into place
+        var that = this;
+
+        // Put video listeners into place
+        if(navigator.getUserMedia) { // Standard
+          navigator.getUserMedia(videoObj, function(stream) {
+            that.set('stream',window.URL.createObjectURL(stream));
+          }, errBack);
+        } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+          navigator.webkitGetUserMedia(videoObj, function(stream){
+            that.set('stream',window.URL.createObjectURL(stream));
+          }, errBack);
+        }
+        else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+          navigator.mozGetUserMedia(videoObj, function(stream){
+            that.set('stream',window.URL.createObjectURL(stream));
+          }, errBack);
+        }
+      }
+
+
+
+    });
+  </script>
+</dom-module>
