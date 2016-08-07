@@ -1,6 +1,6 @@
 # \<video-stream\>
 
-[DEMO](https://veith.github.io/speech-mic/components/video-stream/)
+[DEMO](https://veith.github.io/video-stream/components/video-stream/)
 
 Captures video stream from webcam
 
